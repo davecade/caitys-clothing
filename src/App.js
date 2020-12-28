@@ -2,6 +2,7 @@ import './App.css';
 import React, { Fragment } from 'react';
 import HomePage from './pages/homepage.component'
 import { Switch, Route } from 'react-router-dom';
+import ShopPage from './shop/shop.component'
 
 const HatsPage = () => (
     <div>
@@ -14,7 +15,7 @@ function App() {
       <Fragment>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/hats' component={HatsPage} />
+          <Route path='/shop' component={ShopPage} />
         </Switch>
       </Fragment>
   )
