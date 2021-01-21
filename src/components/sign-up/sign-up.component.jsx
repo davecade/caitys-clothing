@@ -29,10 +29,10 @@ class SignUp extends React.Component {
         }
 
         try {
-            const { user } = auth.createUserWithEmailAndPassword(email, password)
+            const { user } = await auth.createUserWithEmailAndPassword(email, password)
 
-            await createUserProfileDocument(user, {displayName})
-
+            await createUserProfileDocument(user, { displayName })
+ 
             // -- Clears the state to it is blank
             this.setState({
                 displayName: '',
@@ -41,21 +41,23 @@ class SignUp extends React.Component {
                 confirmPassword: ''
             })
 
+
         } catch(error) {
             console.error(error);
         }
+        
     }
 
     handleChange = event => {
         const { name, value } = event.target;
-
+        
         this.setState({[name]: value})
     }
 
     render() {
 
         const { displayName, email, password, confirmPassword } = this.state
-
+        
         return (
             <div className="sign-up">
                 <h2 className="title">I do not have an account</h2>

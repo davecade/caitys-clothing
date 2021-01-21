@@ -12,7 +12,7 @@ const config = {
     measurementId: "G-3329GEC58G"
 }
 
-export const createUserProfileDocument = async(userAuth, additionalData) => {
+export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return;
 
     // -- checking if we have any data on the user that logged in
@@ -23,7 +23,9 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
 
     // -- if the snapshot of user doesnt exist, then we need to create new user
     if(!snapShot.exists) {
+        
         const { displayName, email } = userAuth;
+
         const createdAt = new Date();
 
         try {
@@ -37,7 +39,7 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
             console.log('error creating user', error.message)
         }
     }
-
+    
     return userRef;
 }
 
