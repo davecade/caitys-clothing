@@ -18,3 +18,18 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => (
         }
     )
 )
+
+export const decreaseQuantity = (cartItems, cartItemToDecrease) => {
+
+    if(cartItemToDecrease.quantity > 1) {
+        return cartItems.map(cartItem => {
+            let newQuantity = cartItem.quantity
+            if(cartItem.id === cartItemToDecrease.id) {
+                newQuantity = cartItem.quantity - 1
+            }
+            return {...cartItem, quantity: newQuantity};
+        })
+    } else {
+        return removeItemFromCart(cartItems, cartItemToDecrease)
+    }
+}
