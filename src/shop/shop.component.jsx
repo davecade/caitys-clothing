@@ -3,6 +3,7 @@ import CollectionsOverview from '../components/collections-overview/collections-
 import { Route } from 'react-router-dom'
 import CollectionPage from '../pages/collection/collection.component';
 
+
 const ShopPage = ({ match }) => {
     return (
         <div className="shop-page">
@@ -11,5 +12,7 @@ const ShopPage = ({ match }) => {
         </div>
     )
 }
+
+
 
 export default ShopPage;
