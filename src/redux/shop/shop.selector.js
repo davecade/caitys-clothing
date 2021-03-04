@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import memoize from 'lodash memoize'
 
 const COLLECTION_ID_MAP = {
     hats: 1,
