@@ -16,11 +16,11 @@ export const selectShopData = createSelector(
     shop => shop.collections
 )
 
-export const selectCollection = collectionUrlParam => {
+export const selectCollection = memoize((collectionUrlParam) => {
     return createSelector(
         selectShopData,
         collections => collections.find(
             collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
         )
     )
-}
+})
