@@ -16,9 +16,15 @@ export const selectShopData = createSelector(
     shop => shop.collections
 )
 
+export const selectShopDataForPreview = createSelector(
+    selectShopData,
+    collections => Object.keys(collections).map(key => collections[key])
+)
+
 export const selectCollection = memoize((collectionUrlParam) => {
     return createSelector(
         selectShopData,
         collections => collections[collectionUrlParam]
     )
 })
+
