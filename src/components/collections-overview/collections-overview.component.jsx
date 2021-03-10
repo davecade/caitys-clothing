@@ -15,6 +15,7 @@ const CollectionsOverview = ({collections}) => (
     </div>
 )
 
+//-- Redux
 const mapStateToProps = createStructuredSelector({
     collections: selectShopDataForPreview
 })
