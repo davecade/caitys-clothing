@@ -10,6 +10,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
 
+//-- This is in the base app.js
 const Header = ({ currentUser, hidden }) => {
     
 return (
