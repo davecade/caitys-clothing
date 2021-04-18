@@ -10,7 +10,7 @@ const middlewares = [];
 // -- Checks what environment the app is running on
 // -- Only loads logger if in development environment
 if(process.env.NODE_ENV === 'development') {
-    middleswares.push(logger)
+    middlewares.push(logger)
 }
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares))
