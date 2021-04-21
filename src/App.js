@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect';
-import styled from 'styled-components'
 
 // -- Main App
 class App extends Component {
@@ -44,13 +43,6 @@ class App extends Component {
   
   render() {
 
-      //-- Testing styles usuing styled-components
-      const Text = styled.div`
-        color: red;
-        font-size: 28px;
-        border: ${({isActive}) => isActive ? '1px solid black' : '3px dotted green'}
-      `;
-
       return (
         <Fragment>
           <Header />
@@ -60,7 +52,6 @@ class App extends Component {
             <Route exact path='/checkout' component={CheckoutPage} />
             <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp />)}/>
           </Switch>
-          <Text isActive={true} >I am a component</Text>
         </Fragment>
     )
   }
