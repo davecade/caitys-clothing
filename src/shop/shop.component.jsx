@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CollectionsOverview from '../components/collections-overview/collections-overview.component'
 import { Route } from 'react-router-dom'
 import CollectionPage from '../pages/collection/collection.component';
+import { firestore } from '../firebase/firebase.utils'
 
-
-class ShopPage extends React {
+class ShopPage extends Component {
 
     unsubscribeFromSnapshot = () => null;
 
     componentDidMount() {
+        const collectionRef = firestore.collection('collections')
+
+        collectionRef.onSnapshot(async snapshot => {
+            console.log("SNAPSHOT Collections: ", snapshot)
+        })
 
     }
 
