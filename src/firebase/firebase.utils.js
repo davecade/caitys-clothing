@@ -70,7 +70,9 @@ export const convertCollectionsSnapshotToMap = (collections) => {
         }
     })
 
-    console.log(transformedCollection)
+    transformedCollection((accumulator, collection) => {
+        
+    }, {})
 }
 
 
