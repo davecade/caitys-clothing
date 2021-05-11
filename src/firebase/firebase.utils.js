@@ -70,17 +70,18 @@ export const convertCollectionsSnapshotToMap = (collections) => {
         }
     })
 
-    // return transformedCollection.reduce((accumulator, collection) => {
-    //     accumulator[collection.title.toLowerCase()] = collection;
-    //     return accumulator;
-    // }, {})
+    // -- Using Reduce
+    return transformedCollection.reduce((accumulator, collection) => {
+        accumulator[collection.title.toLowerCase()] = collection;
+        return accumulator;
+    }, {})
 
-    //-- Array version
-    return transformedCollection.map((item) => {
-        let newObj = {}
-        newObj[item.title.toLowerCase()] = item
-        return newObj
-    })
+    //-- Using ForEach
+    // let newObj = {}
+    // transformedCollection.forEach((item) => {
+    //     newObj[item.title.toLowerCase()] = item
+    // })
+    // return newObj;
 }
 
 
