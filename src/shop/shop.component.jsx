@@ -26,10 +26,7 @@ class ShopPage extends Component {
             const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
             updateCollections(collectionsMap)
             this.setState({loading: false})
-        })
-        
-        
-
+        })  
     }
 
     render() {
