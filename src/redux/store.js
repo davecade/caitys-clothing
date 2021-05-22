@@ -3,9 +3,10 @@ import logger from 'redux-logger';
 import { persistStore } from 'redux-persist'
 
 import rootReducer from './root-reducer';
+import thunk from 'redux-thunk'
 
 // -- First setting middlewares to emprty
-const middlewares = [];
+const middlewares = [thunk];
 
 // -- Checks what environment the app is running on
 // -- Only loads logger if in development environment

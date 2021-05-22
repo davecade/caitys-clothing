@@ -13,7 +13,8 @@ const CollectionPageWithSpinner = WithSpinner(CollectionPage)
 class ShopPage extends Component {
 
     state = {
-        loading: true
+        loading: true,
+        isFetching: false
     }
 
     unsubscribeFromSnapshot = () => null;
