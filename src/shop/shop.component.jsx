@@ -24,8 +24,14 @@ class ShopPage extends Component {
 
         return (
             <div className="shop-page">
-                <Route exact path={`${match.path}`} render={(props) => <CollectionsOverviewWithSpinner isLoading={isCollectionFetching} {...props} />} />
-                <Route path={`${match.path}/:collectionId`} render={(props) => <CollectionPageWithSpinner isLoading={isCollectionFetching} {...props} />} />
+                <Route exact path={`${match.path}`} render={
+                        (props) => <CollectionsOverviewWithSpinner isLoading={isCollectionFetching} {...props} />
+                    }
+                />
+                <Route path={`${match.path}/:collectionId`} render={
+                        (props) => <CollectionPageWithSpinner isLoading={isCollectionFetching} {...props} />
+                    }
+                />
             </div>
         )
     }
