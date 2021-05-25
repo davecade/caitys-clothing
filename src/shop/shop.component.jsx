@@ -45,5 +45,5 @@ const mapDispatchToProps = dispatch => ({
     fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync())
 })
 
-
+//export
 export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
