@@ -37,6 +37,7 @@ class ShopPage extends Component {
     }
 }
 
+//redux
 const mapStateToProps = createStructuredSelector({
     isFetchingCollections: selectIsCollectionFetching,
     isCollectionsLoaded: selectIsCollectionsLoaded
