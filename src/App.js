@@ -13,6 +13,9 @@ import { selectCurrentUser } from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect';
 import { selectShopDataForPreview } from './redux/shop/shop.selector';
 
+
+//-- Starting Redux Saga Next
+
 // -- Main App
 class App extends Component {
 
