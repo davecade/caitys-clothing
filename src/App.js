@@ -14,7 +14,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectShopDataForPreview } from './redux/shop/shop.selector';
 
 
-//-- Starting Redux Saga Next
+//-- Starting Transfer of user into Sagas
 
 // -- Main App
 class App extends Component {
