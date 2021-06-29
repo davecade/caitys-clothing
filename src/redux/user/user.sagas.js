@@ -5,7 +5,12 @@ import {
     googleProvider,
     createUserProfileDocument
 } from '../../firebase/firebase.utils'
-import { googleSignInSuccess, googleSignInFailure } from "./user.actions";
+import {
+    googleSignInSuccess,
+    googleSignInFailure,
+    emailSignInSuccess,
+    emailSignInFailure
+} from "./user.actions";
 
 export function* signInWithGoogle() {
     try {
@@ -27,6 +32,17 @@ export function* onGoogleSignInStart() {
     yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle)
 }
 
+export function* signInWithEmail({payload: {email, password}}) {
+
+}
+
+
+export function* emailSignInStart() {
+    yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail)
+}
+
+
 export function* userSagas() {
     yield all([call(onGoogleSignInStart)])
 }
+
