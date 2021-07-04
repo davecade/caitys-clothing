@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import { selectCurrentUser } from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect';
 import { selectShopDataForPreview } from './redux/shop/shop.selector';
+import { checkUserSession } from './redux/user/user.actions'
 
 
 //-- Starting Transfer of user into Sagas
@@ -21,21 +22,9 @@ class App extends Component {
 
   componentDidMount() {
 
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if(userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
+    const { checkUserSession } = this.props
+    checkUserSession()
 
-    //     userRef.onSnapshot(snapShot => {
-    //       setCurrentUser({
-    //           id: snapShot.id,
-    //           ...snapShot.data()
-    //         });
-    //     });
-    //   } else {
-    //     setCurrentUser(userAuth)
-    //   }
-      
-    // })
   }
 
   componentWillUnmount() {
@@ -63,4 +52,8 @@ const mapStateToProps = createStructuredSelector({
   collectionsArray: selectShopDataForPreview
 })
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
