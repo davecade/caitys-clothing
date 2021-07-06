@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest, all } from 'redux-saga/effects'
 
 import ShopActionTypes from './shop.types'
 
@@ -17,15 +17,14 @@ export function* fetchCollectionsAsync() {
         yield put(fetchCollectionsFailure(error.message))
     }
 
-    
-        
-        // collectionRef.get().then(snapshot => {
-        //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
-        //     dispatch(fetchCollectionsSuccess(collectionsMap))
-            
-        // }).catch(error => dispatch(fetchCollectionsFailure(error.message)))
 }
 
 export function* fetchCollectionsStart() {
     yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollectionsAsync)
+}
+
+export function* shopSagas() {
+    yield all([
+        call(fetchCollectionsStart)
+    ])
 }
