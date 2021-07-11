@@ -9,8 +9,8 @@ import { signUpStart } from '../../redux/user/user.actions'
 
 const SignUp = ({ signUpStart }) => {
 
-    const [ signUpInfo, setSignUpInfo ] = useState({ displayName: '', email: '', password: '', confirmPassword: '' })
-    const { displayName, email, password, confirmPassword } = signUpInfo
+    const [ userCredentials, setUserCredentials ] = useState({ displayName: '', email: '', password: '', confirmPassword: '' })
+    const { displayName, email, password, confirmPassword } = userCredentials
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -26,7 +26,7 @@ const SignUp = ({ signUpStart }) => {
 
     const handleChange = event => {
         const { name, value } = event.target;
-        setSignUpInfo({ ...signUpInfo, [name]: value})
+        setUserCredentials({ ...userCredentials, [name]: value})
     }
         
     return (
