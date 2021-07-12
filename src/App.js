@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, Fragment } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import HomePage from './pages/homepage/homepage.component'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ShopPage from './shop/shop.component'
@@ -16,35 +16,23 @@ import { checkUserSession } from './redux/user/user.actions'
 //-- Starting Transfer of user into Sagas
 
 // -- Main App
-class App extends Component {
+const App = ({ checkUserSession, currentUser }) => {
 
-  unsubscribeFromAuth = () => null;
-
-  componentDidMount() {
-
-    const { checkUserSession } = this.props
+  useEffect(()=>{
     checkUserSession()
+  }, [checkUserSession])
 
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
-  
-  render() {
-
-      return (
-        <Fragment>
-          <Header />
-          <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/shop' component={ShopPage} />
-            <Route exact path='/checkout' component={CheckoutPage} />
-            <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp />)}/>
-          </Switch>
-        </Fragment>
-    )
-  }
+  return (
+    <Fragment>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/shop' component={ShopPage} />
+        <Route exact path='/checkout' component={CheckoutPage} />
+        <Route path='/signin' render={() => currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp />)}/>
+      </Switch>
+    </Fragment>
+)
 }
 
 const mapStateToProps = createStructuredSelector({
