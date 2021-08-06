@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Logo} from '../../assets/crown.svg'
+import { ReactComponent as Logo} from '../../assets/cat.svg'
 import { connect } from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
@@ -8,6 +8,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink } from './header.styles'
 import { signOutStart } from '../../redux/user/user.actions'
+import './header.styles.scss'
 
 //-- This is in the base app.js
 const Header = ({ currentUser, hidden, signOutStart }) => {
@@ -19,7 +20,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
                 </LogoContainer>
                 <OptionsContainer>
                     <OptionLink to="/shop">
-                        Store
+                        Shop
                     </OptionLink>
                     <OptionLink to="/">
                         Contact
