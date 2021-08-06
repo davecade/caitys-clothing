@@ -13,7 +13,6 @@ import { selectShopDataForPreview } from './redux/shop/shop.selector';
 import { checkUserSession } from './redux/user/user.actions'
 
 
-//-- Starting Transfer of user into Sagas
 
 // -- Main App
 const App = ({ checkUserSession, currentUser }) => {
