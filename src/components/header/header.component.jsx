@@ -18,6 +18,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
                 <LogoContainer to="/">
                     <Logo className="logo" />
                 </LogoContainer>
+                <h1 className="app-title">Caity's Clothing Store</h1>
                 <OptionsContainer>
                     <OptionLink to="/shop">
                         Shop
