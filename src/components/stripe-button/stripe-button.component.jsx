@@ -13,10 +13,10 @@ const StripeCheckoutButton = ({ price }) => {
     return(
         <StripeCheckout 
             label='Pay Now'
-            name="Crown Clothing Pty Ltd"
+            name="Caity's Clothing Store"
             billingAddress
             shippingAddress
-            image="https://svgshare.com/i/CUz.svg"
+            image="https://svgshare.com/i/Zwf.svg"
             description={`Your total is $${price}`}
             amount={priceForStripe}
             panelLabel='Pay Now'
@@ -27,3 +27,6 @@ const StripeCheckoutButton = ({ price }) => {
 }
 
 export default StripeCheckoutButton;
+
+
+//https://svgshare.com/i/CUz.svg
