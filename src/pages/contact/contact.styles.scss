@@ -1,0 +1,83 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+
+    .portrait {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid black;
+        margin-right: 5rem;
+    }
+
+    #contact { 
+
+        .contact-form {
+
+            .form {
+
+                button {
+                    width: 50%;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+            }
+    
+            .input-fields {
+                width: 100%;
+                display: grid;
+                grid-template-areas: 'name email'
+               'subject phone'
+               'message message';
+                grid-gap: 1rem;
+    
+                .name {
+                    grid-area: name;
+                }
+
+                .email {
+                    grid-area: email;
+                }
+
+                .subject {
+                    grid-area: subject;
+                }
+
+                .phone {
+                    grid-area: phone;
+                }
+
+                .message {
+                    grid-area: message;
+                }
+
+                input {
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+  
+//   #contact-info {
+//     background: #333;
+//   }
+  
+//   #contact-info .info-fields {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     text-align: center;
+//     color: #fff;
+//     padding: 2.5rem 0;
+//   }
+  
+//   #contact-info .info-fields i {
+//     font-size: 2rem;
+//   }
+  
+//   #contact-info .info-fields h3 {
+//     margin: .5rem 0;
+//   }
