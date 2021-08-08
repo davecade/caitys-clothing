@@ -77,11 +77,6 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     }, {})
 
     //-- Using ForEach
-    // let newObj = {}
-    // transformedCollection.forEach((item) => {
-    //     newObj[item.title.toLowerCase()] = item
-    // })
-    // return newObj;
 }
 
 
