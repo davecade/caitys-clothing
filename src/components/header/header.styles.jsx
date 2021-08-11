@@ -9,13 +9,13 @@ export const HeaderContainer = styled.div`
     margin-bottom: 25px;
 
     @media screen and (max-width: 800px) {
+        width: 100%;
         height: 60px;
         padding: 10px;
         margin-bottom: 20px;
     }
 
     @media screen and (max-width: 600px) {
-        border: 1px solid red;
         height: 150px;
         display: flex;
         flex-direction: column;
@@ -23,11 +23,12 @@ export const HeaderContainer = styled.div`
     }
 
     @media screen and (max-width: 400px) {
-        border: 1px solid red;
+
         height: 150px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 0;
     }
 `
 
@@ -37,7 +38,7 @@ export const LogoContainer = styled(Link)`
     width: 70px;
     //padding: 25px;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 600px) {
        width: 40px;
     }
 `
@@ -48,9 +49,21 @@ export const OptionsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    @media screen and (max-width: 600px) {
+        padding: 10px 15px;
+        width: 80%;
+    }
+
+    @media screen and (max-width: 400px) {
+        padding: 10px 15px;
+        width: 100%;
+    }
+
 `
 
 export const OptionContainerStyles = css`
+    width: 100%;
     padding: 10px 15px;
 `
 
@@ -62,6 +75,11 @@ export const OptionHover = css`
 export const OptionLink = styled(Link)`
     ${OptionContainerStyles}: hover {
         ${OptionHover}
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 100%;
+        padding: 10px 15px;
     }
 
 `
