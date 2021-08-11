@@ -5,4 +5,10 @@ export const HomePageContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px 80px;
+
+    @media screen and (max-width: 650px) {
+        padding: 20px 10px;
+        display: grid;
+        grid-column 1fr 1fr;
+    }
 `

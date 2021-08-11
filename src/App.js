@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React, { useEffect, Fragment } from 'react';
 import HomePage from './pages/homepage/homepage.component'
 import { Switch, Route, Redirect } from 'react-router-dom';
