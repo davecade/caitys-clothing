@@ -63,8 +63,11 @@ export const OptionsContainer = styled.div`
 `
 
 export const OptionContainerStyles = css`
-    width: 100%;
     padding: 10px 15px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `
 
 export const OptionHover = css`

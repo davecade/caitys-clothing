@@ -5,6 +5,13 @@
     height: 350px;
     align-items: center;
     position: relative;
+
+    @media (max-width: 800px) {
+      justify-content: center;
+      align-items: center;
+      position: none;
+      width: 100%;
+    }
   
     .image {
       width: 100%;
