@@ -4,15 +4,48 @@
     align-items: center;
     margin-top: 10rem;
 
+    @media(max-width: 800px) {
+        flex-direction: column;
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 0;
+    }
+
     .portrait {
         width: 200px;
         height: 200px;
         border-radius: 50%;
         border: 2px solid black;
         margin-right: 5rem;
+
+        @media(max-width: 800px) {
+            width: 100px;
+            height: 100px;
+            margin: 0;
+        }
     }
 
-    #contact { 
+    #contact {
+
+        .lead {
+
+            @media(max-width: 800px) {
+                text-align: center;
+            }
+
+            h1 {
+                @media(max-width: 800px) {
+                    margin: 0;
+                }
+            }
+
+            p {
+                @media(max-width: 800px) {
+                    margin: .1rem 0;
+                }
+            }
+        }
 
         .contact-form {
 
@@ -32,6 +65,16 @@
                'subject phone'
                'message message';
                 grid-gap: 1rem;
+
+                @media(max-width: 450px) {
+                    grid-template-areas:
+                    'name'
+                    'email'
+                    'subject'
+                    'phone'
+                    'message'
+                    'message';
+                }
     
                 .name {
                     grid-area: name;

@@ -36,6 +36,10 @@ export const CustomButtonContainer = styled.button`
     justify-content: center;
 
     ${getButtonStyles}
+
+    @media(max-width: 450px) {
+        width: 100%;
+    }
 `
 
 export const GoogleSignInStyles = css`
