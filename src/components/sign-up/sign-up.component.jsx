@@ -73,7 +73,7 @@ const SignUp = ({ signUpStart }) => {
                     required
                 />
 
-                <CustomButton type="submit">Sign UP</CustomButton>
+                <CustomButton id="signUpButton" type="submit">Sign UP</CustomButton>
             </form>
         </div>
     )
