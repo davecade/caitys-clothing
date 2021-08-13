@@ -20,6 +20,7 @@ export const HeaderContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 0px;
     }
 
     @media screen and (max-width: 400px) {
@@ -56,7 +57,7 @@ export const OptionsContainer = styled.div`
     }
 
     @media screen and (max-width: 400px) {
-        padding: 10px 15px;
+        padding: 0 15px;
         width: 100%;
     }
 
