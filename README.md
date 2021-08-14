@@ -4,4 +4,4 @@ Ecommerce clothing store created with ReactJS, complete with Stripe payment syst
 
 ## Screenshots:
 <img src="gh-screenshots/s1.PNG" />
-<img src="gh-screenshots/s2.PNG" />
+<img src="gh-screenshots/s3.PNG" />
