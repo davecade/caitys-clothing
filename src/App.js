@@ -1,13 +1,7 @@
 import './App.scss';
 import React, { useEffect, Fragment, lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-//import HomePage from './pages/homepage/homepage.component'
-// import ShopPage from './pages/shop/shop.component'
-// import contactPage from './pages/contact/contact.component'
-// import Submited from './pages/submitted/submited.component'
 import Header from './components/header/header.component'
-// import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
-// import CheckoutPage from './pages/checkout/checkout.component'
 import { connect } from 'react-redux';
 import { selectCurrentUser } from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect';
