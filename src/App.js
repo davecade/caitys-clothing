@@ -8,6 +8,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectShopDataForPreview } from './redux/shop/shop.selector';
 import { checkUserSession } from './redux/user/user.actions'
 import Spinner from './components/spinner/spinner.component'
+import ErrorBoundary from './components/error-boundary/error-boundary.component'
 
 const HomePage = lazy (() => import('./pages/homepage/homepage.component'))
 const ShopPage = lazy (() => import('./pages/shop/shop.component'))
@@ -29,14 +30,16 @@ const App = ({ checkUserSession, currentUser }) => {
     <Fragment>
       <Header />
       <Switch>
-        <Suspense fallback={<Spinner />}>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/contact' component={contactPage} />
-          <Route path='/submitted' component={Submited} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route path='/signin' render={() => currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp />)}/>
-        </Suspense>
+        <ErrorBoundary >
+          <Suspense fallback={<Spinner />}>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route path='/contact' component={contactPage} />
+            <Route path='/submitted' component={Submited} />
+            <Route exact path='/checkout' component={CheckoutPage} />
+            <Route path='/signin' render={() => currentUser ? (<Redirect to="/"/>) : (<SignInAndSignUp />)}/>
+          </Suspense>
+        </ErrorBoundary>
       </Switch>
     </Fragment>
 )
