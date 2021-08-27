@@ -2,7 +2,7 @@ import './App.scss';
 import React, { useEffect, Fragment, lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from './components/header/header.component'
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser } from './redux/user/user.selectors'
 import { createStructuredSelector } from 'reselect';
 import { selectShopDataForPreview } from './redux/shop/shop.selector';
