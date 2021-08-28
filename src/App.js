@@ -20,11 +20,16 @@ const CheckoutPage = lazy (() => import('./pages/checkout/checkout.component'))
 
 
 // -- Main App
-const App = ({ checkUserSession, currentUser }) => {
+const App = () => {
+  const currentUser = useSelector(selectCurrentUser)
+  const isHidden = useSelector(state => state.cart.hidden)
+  console.log(isHidden)
+  console.log(currentUser)
+  
 
-  useEffect(()=>{
-    checkUserSession()
-  }, [checkUserSession])
+  // useEffect(()=>{
+  //   checkUserSession()
+  // }, [checkUserSession])
 
   return (
     <Fragment>
@@ -54,4 +59,4 @@ const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
