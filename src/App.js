@@ -1,11 +1,9 @@
 import './App.scss';
 import React, { useEffect, Fragment, lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Header from './components/header/header.component'
+import Header from './components/header/header.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser } from './redux/user/user.selectors'
-import { createStructuredSelector } from 'reselect';
-import { selectShopDataForPreview } from './redux/shop/shop.selector';
 import { checkUserSession } from './redux/user/user.actions'
 import Spinner from './components/spinner/spinner.component'
 import ErrorBoundary from './components/error-boundary/error-boundary.component'
@@ -22,14 +20,12 @@ const CheckoutPage = lazy (() => import('./pages/checkout/checkout.component'))
 // -- Main App
 const App = () => {
   const currentUser = useSelector(selectCurrentUser)
-  const isHidden = useSelector(state => state.cart.hidden)
-  console.log(isHidden)
-  console.log(currentUser)
-  
+  const dispatch = useDispatch()
 
-  // useEffect(()=>{
-  //   checkUserSession()
-  // }, [checkUserSession])
+
+  useEffect(()=>{
+    dispatch(checkUserSession())
+  }, [dispatch])
 
   return (
     <Fragment>
@@ -49,14 +45,5 @@ const App = () => {
     </Fragment>
 )
 }
-
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  collectionsArray: selectShopDataForPreview
-})
-
-const mapDispatchToProps = dispatch => ({
-  checkUserSession: () => dispatch(checkUserSession())
-})
 
 export default App;
