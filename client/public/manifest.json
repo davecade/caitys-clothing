@@ -1,5 +1,5 @@
 {
-  "short_name": "caitys-clothing",
+  "short_name": "Caitys-Clothing",
   "name": "Caitys-Clothing-Store by Dave",
   "icons": [
     {
@@ -22,5 +22,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
+  "scop": ".",
   "background_color": "#ffffff"
 }
