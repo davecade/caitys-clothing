@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/custom-button.component'
 import CartItem from '../cart-item/cart-item.component'
 import { selectCartItems } from '../../redux/cart/cart.selectors'
 import './cart-dropdown.styles.scss'
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { toggleCartHidden } from '../../redux/cart/cart.actions'
 
 
